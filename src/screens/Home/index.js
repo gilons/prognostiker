@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   ImageBackground,
@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import Share from 'react-native-share';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import ViewShot from 'react-native-view-shot';
 import colors from '../../meta/colors';
 import * as football from '../../meta/football.json';
@@ -31,7 +31,7 @@ export default class Home extends Component {
   };
   onShare = async (url) => {
     try {
-      await Share.open({url});
+      await Share.open({ url });
     } catch (error) {
       alert(error);
     }
@@ -42,7 +42,6 @@ export default class Home extends Component {
   };
   render() {
     return (
-      <ViewShot ref={this.createShotRef}>
       <ImageBackground
         resizeMode={'cover'}
         source={this.backgroundImage}
@@ -50,6 +49,7 @@ export default class Home extends Component {
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={styles.mainContainer}>
+          <ViewShot ref={this.createShotRef}>
             <View style={styles.prognosticContainer}>
               <Prognostic
                 defaultTeam={this.team1Initial}
@@ -71,12 +71,12 @@ export default class Home extends Component {
                 <Text style={styles.separator}>-</Text>
               </View>
             </View>
+          </ViewShot>
         </ScrollView>
         <TouchableOpacity onPress={this.shoot} style={styles.capturer}>
           <Text style={styles.capturerText}>{'CAPTURE'}</Text>
         </TouchableOpacity>
       </ImageBackground>
-      </ViewShot>
     );
   }
 }
