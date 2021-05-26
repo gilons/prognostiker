@@ -8,6 +8,8 @@ target 'prognostiker' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-admob', :path => '../node_modules/react-native-admob'
+
   target 'prognostikerTests' do
     inherit! :complete
     # Pods for testing

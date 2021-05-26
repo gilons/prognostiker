@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Image,
   ImageBackground,
@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import Share from 'react-native-share';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import ViewShot from 'react-native-view-shot';
 import colors from '../../meta/colors';
 import * as football from '../../meta/football.json';
@@ -31,7 +31,7 @@ export default class Home extends Component {
   };
   onShare = async (url) => {
     try {
-      await Share.open({ url });
+      await Share.open({url});
     } catch (error) {
       alert(error);
     }
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    maxHeight: 300,
+    paddingBottom: 50,
+    maxHeight: 400,
   },
 });

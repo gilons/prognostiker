@@ -22,16 +22,20 @@ const App: () => React$Node = () => {
       <StatusBar
         translucent
         backgroundColor={colors.transparent}
-        barStyle={'default'}></StatusBar>
+        barStyle={'default'}>
+      </StatusBar>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
           options={{
-            headerShown:false
+            headerShown: false
           }}
           component={Home}
         />
-        <Stack.Screen name="Teams" options={{ title:'Select Team' }} component={SelectTeams} />
+        <Stack.Screen
+          name="Teams"
+          options={{ title: 'Select Team',headerShown:false }}
+          component={SelectTeams} />
       </Stack.Navigator>
     </NavigationContainer>
   );
